@@ -7,6 +7,7 @@
 
   <style>
     body { margin:0; font-family: Arial; }
+
     .hero {
       height:100vh;
       background:url('./logo.jpg') center/cover;
@@ -17,8 +18,18 @@
       align-items:center;
       text-align:center;
     }
+
     section { padding:40px; text-align:center; }
+
     .menu { background:#f5f5f5; }
+
+    .item{
+      background:white;
+      padding:15px;
+      margin:10px;
+      border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 
@@ -30,6 +41,7 @@
   <button onclick="setLang('en')" style="padding:8px 12px;border:none;border-radius:20px;cursor:pointer;">🇬🇧 EN</button>
 </div>
 
+<!-- HERO -->
 <div class="hero">
   <h1 class="es">El Horno de Neptuno</h1>
   <h1 class="en" style="display:none;">The Neptuno Oven</h1>
@@ -38,6 +50,7 @@
   <p class="en" style="display:none;">Tapas by the sea in Costa Adeje</p>
 </div>
 
+<!-- INTRO -->
 <section>
   <h2 class="es">Un rincón único frente al océano</h2>
   <h2 class="en" style="display:none;">A unique spot by the ocean</h2>
@@ -46,44 +59,47 @@
   <p class="en" style="display:none;">Enjoy tapas by the sea with one of the best sunsets in Costa Adeje.</p>
 </section>
 
+<!-- MENÚ -->
 <section id="menu" class="menu">
   <h2>🍽️ Nuestra Carta</h2>
-  <p>Tapas frente al mar en Costa Adeje</p>
 
-  <div style="margin:20px 0;">
-    <button onclick="showMenu('all')">Todo</button>
-    <button onclick="showMenu('tapas')">Tapas</button>
-    <button onclick="showMenu('mar')">Mar</button>
-    <button onclick="showMenu('bebidas')">Bebidas</button>
-  </div>
-
-  <div class="item tapas">🥖 Croquetas caseras - 8€</div>
-  <div class="item tapas">🍟 Papas bravas - 8€</div>
-  <div class="item mar">🐙 Pulpo a la gallega - 8€</div>
-  <div class="item mar">🦐 Gambas al ajillo - 8€</div>
-  <div class="item bebidas">🍷 Vino canario</div>
+  <div class="item">🥖 Croquetas caseras - 8€</div>
+  <div class="item">🍟 Papas bravas - 8€</div>
+  <div class="item">🐙 Pulpo a la gallega - 8€</div>
+  <div class="item">🦐 Gambas al ajillo - 8€</div>
+  <div class="item">🍷 Vino canario</div>
 </section>
-<section style="padding:50px;text-align:center;background:#f9f9f9;">
 
+<!-- ⭐ RESEÑAS CARRUSEL PRO -->
+<section style="padding:50px;text-align:center;background:#f9f9f9;">
   <h2>⭐ Opiniones de nuestros clientes</h2>
 
-  <div style="max-width:800px;margin:auto;display:grid;gap:15px;">
+  <div style="max-width:700px;margin:auto;overflow:hidden;border-radius:15px;">
+    <div id="carousel" style="display:flex;transition:transform 0.5s ease;">
 
-    <div style="background:white;padding:15px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      ⭐⭐⭐⭐⭐
-      <p>“Comida increíble y vistas espectaculares al mar.”</p>
-      <strong>- Google Review</strong>
+      <div style="min-width:100%;background:white;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+        ⭐⭐⭐⭐⭐
+        <p>“Comida increíble y vistas espectaculares al mar.”</p>
+        <strong>- Google Review</strong>
+      </div>
+
+      <div style="min-width:100%;background:white;padding:25px;">
+        ⭐⭐⭐⭐⭐
+        <p>“El mejor atardecer de Costa Adeje.”</p>
+        <strong>- TripAdvisor</strong>
+      </div>
+
+      <div style="min-width:100%;background:white;padding:25px;">
+        ⭐⭐⭐⭐⭐
+        <p>“Servicio excelente y ambiente perfecto.”</p>
+        <strong>- Cliente real</strong>
+      </div>
+
     </div>
-
-    <div style="background:white;padding:15px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      ⭐⭐⭐⭐⭐
-      <p>“El mejor sitio para ver el atardecer en Costa Adeje.”</p>
-      <strong>- TripAdvisor</strong>
-    </div>
-
   </div>
-
 </section>
+
+<!-- EXPERIENCIA -->
 <section>
   <h2 class="es">Vive la experiencia</h2>
   <h2 class="en" style="display:none;">Live the experience</h2>
@@ -92,7 +108,7 @@
 
   <h3 style="margin-top:30px;">🕒 Horario</h3>
 
-  <div style="background:white;padding:15px;border-radius:10px;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+  <div style="background:white;padding:15px;border-radius:10px;display:inline-block;">
     <p><strong>Lunes y martes:</strong> Cerrado</p>
     <p><strong>Miércoles a domingo:</strong> 12:00 – 22:30</p>
   </div>
@@ -106,12 +122,12 @@
   </iframe>
 </section>
 
-<!-- 📞 BOTONES -->
+<!-- BOTONES -->
 <a href="tel:+34682106678" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
 📞 Reservar mesa
 </a>
 
-<a href="https://wa.me/34672792801?text=Hola%20/%20Hello%20quiero%20reservar%20mesa" target="_blank" style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
+<a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa" target="_blank" style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
 💬 WhatsApp
 </a>
 
@@ -119,19 +135,8 @@
 🍽️ Ver carta
 </a>
 
-<!-- ⚙️ SCRIPTS -->
+<!-- SCRIPTS -->
 <script>
-function showMenu(type) {
-  let items = document.querySelectorAll('.item');
-  items.forEach(item => {
-    if (type === 'all' || item.classList.contains(type)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
-
 function setLang(lang) {
   document.querySelectorAll('.es').forEach(e => {
     e.style.display = (lang === 'es') ? 'block' : 'none';
@@ -141,6 +146,19 @@ function setLang(lang) {
     e.style.display = (lang === 'en') ? 'block' : 'none';
   });
 }
+
+/* CARRUSEL */
+let index = 0;
+
+setInterval(() => {
+  const carousel = document.getElementById("carousel");
+  const total = carousel.children.length;
+
+  index++;
+  if (index >= total) index = 0;
+
+  carousel.style.transform = "translateX(" + (-index * 100) + "%)";
+}, 3000);
 </script>
 
 </body>
