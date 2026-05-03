@@ -17,46 +17,49 @@
       justify-content:center;
       align-items:center;
       text-align:center;
+      padding:20px;
     }
 
-    section { padding:40px; text-align:center; }
+    section { padding:50px 20px; text-align:center; }
 
     .menu { background:#f5f5f5; }
 
     .item{
       background:white;
       padding:15px;
-      margin:10px;
+      margin:10px auto;
       border-radius:12px;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      max-width:500px;
     }
+
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      display:inline-block;
+      margin-top:10px;
+    }
+
+    a { text-decoration:none; }
   </style>
 </head>
 
 <body>
 
-<!-- 🌍 BOTÓN IDIOMA -->
-<div style="position:fixed;top:15px;left:15px;z-index:999;">
-  <button onclick="setLang('es')" style="padding:8px 12px;border:none;border-radius:20px;margin-right:5px;cursor:pointer;">🇪🇸 ES</button>
-  <button onclick="setLang('en')" style="padding:8px 12px;border:none;border-radius:20px;cursor:pointer;">🇬🇧 EN</button>
-</div>
-
 <!-- HERO -->
 <div class="hero">
-  <h1 class="es">El Horno de Neptuno</h1>
-  <h1 class="en" style="display:none;">The Neptuno Oven</h1>
-
-  <p class="es">Tapas frente al mar en Costa Adeje</p>
-  <p class="en" style="display:none;">Tapas by the sea in Costa Adeje</p>
+  <h1>El Horno de Neptuno</h1>
+  <p>Tapas frente al mar en Costa Adeje</p>
+  <p><strong>Tapas by the sea with sunset views</strong></p>
 </div>
 
 <!-- INTRO -->
 <section>
-  <h2 class="es">Un rincón único frente al océano</h2>
-  <h2 class="en" style="display:none;">A unique spot by the ocean</h2>
-
-  <p class="es">Disfruta tapas frente al mar con uno de los mejores atardeceres de Costa Adeje.</p>
-  <p class="en" style="display:none;">Enjoy tapas by the sea with one of the best sunsets in Costa Adeje.</p>
+  <h2>Un rincón único frente al océano</h2>
+  <p>Disfruta tapas con vistas increíbles y atardeceres inolvidables.</p>
+  <p><strong>Enjoy tapas by the ocean with stunning sunset views.</strong></p>
 </section>
 
 <!-- MENÚ -->
@@ -70,117 +73,94 @@
   <div class="item">🍷 Vino canario</div>
 </section>
 
-<!-- ⭐ RESEÑAS CARRUSEL -->
-<section style="padding:50px;text-align:center;background:#f9f9f9;">
+<!-- ⭐ RESEÑAS PRO -->
+<section style="background:#f9f9f9;">
+
   <h2>⭐ Opiniones de nuestros clientes</h2>
 
   <div style="max-width:700px;margin:auto;overflow:hidden;border-radius:15px;">
     <div id="carousel" style="display:flex;transition:transform 0.5s ease;">
 
-      <div style="min-width:100%;background:white;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-        ⭐⭐⭐⭐⭐
-        <p>“Comida increíble y vistas espectaculares al mar.”</p>
-        <strong>- Google Review</strong>
-      </div>
+      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
+         target="_blank" style="min-width:100%;color:inherit;">
+        <div class="card">
+          ⭐⭐⭐⭐⭐
+          <p>“Comida increíble y vistas espectaculares al mar.”</p>
+          <strong>Ver en Google</strong>
+        </div>
+      </a>
 
-      <div style="min-width:100%;background:white;padding:25px;">
-        ⭐⭐⭐⭐⭐
-        <p>“El mejor atardecer de Costa Adeje.”</p>
-        <strong>- TripAdvisor</strong>
-      </div>
+      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
+         target="_blank" style="min-width:100%;color:inherit;">
+        <div class="card">
+          ⭐⭐⭐⭐⭐
+          <p>“El mejor atardecer de Costa Adeje.”</p>
+          <strong>Ver en Google</strong>
+        </div>
+      </a>
 
-      <div style="min-width:100%;background:white;padding:25px;">
-        ⭐⭐⭐⭐⭐
-        <p>“Servicio excelente y ambiente perfecto.”</p>
-        <strong>- Cliente real</strong>
-      </div>
+      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
+         target="_blank" style="min-width:100%;color:inherit;">
+        <div class="card">
+          ⭐⭐⭐⭐⭐
+          <p>“Servicio excelente y ambiente perfecto.”</p>
+          <strong>Ver en Google</strong>
+        </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- 🚀 VIVE LA EXPERIENCIA (MEJORADO) -->
-<section style="padding:50px;text-align:center;background:#f9f9f9;">
+<!-- EXPERIENCIA -->
+<section>
 
-  <h2 class="es">Vive la experiencia</h2>
-  <h2 class="en" style="display:none;">Live the experience</h2>
+  <h2>Vive la experiencia</h2>
+  <p>Mar, comida y atardecer en Costa Adeje</p>
 
-  <p style="max-width:600px;margin:auto;">
-    Mar, comida y atardecer en Costa Adeje
-  </p>
+  <h3>🕒 Horario</h3>
 
-  <!-- HORARIO -->
-  <h3 style="margin-top:30px;">🕒 Horario</h3>
-
-  <div style="
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    display:inline-block;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    margin-top:10px;
-  ">
+  <div class="card">
     <p><strong>Lunes y martes:</strong> Cerrado</p>
     <p><strong>Miércoles a domingo:</strong> 12:00 – 22:30</p>
   </div>
 
-  <!-- MAPA -->
   <h3 style="margin-top:40px;">📍 Cómo llegar</h3>
 
-  <div style="max-width:900px;margin:auto;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.2);">
+  <iframe 
+    src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
+    width="100%" height="320"
+    style="border:0;border-radius:15px;margin-top:10px;">
+  </iframe>
 
-    <iframe 
-      src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
-      width="100%" 
-      height="350"
-      style="border:0;"
-      loading="lazy">
-    </iframe>
+  <br>
 
-  </div>
-
-  <!-- BOTÓN MAPA -->
-  <a href="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje" target="_blank" style="
-    display:inline-block;
-    margin-top:15px;
-    background:black;
-    color:white;
-    padding:12px 20px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-  ">
+  <a href="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje"
+     target="_blank"
+     style="display:inline-block;margin-top:15px;background:black;color:white;padding:12px 20px;border-radius:10px;">
     📍 Abrir en Google Maps
   </a>
 
 </section>
 
-<!-- BOTONES -->
-<a href="tel:+34682106678" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
+<!-- BOTONES FLOTANTES -->
+<a href="tel:+34682106678" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:bold;">
 📞 Reservar mesa
 </a>
 
-<a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa" target="_blank" style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
+<a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa"
+   target="_blank"
+   style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:bold;">
 💬 WhatsApp
 </a>
 
-<a href="#menu" style="position:fixed;bottom:150px;right:20px;background:black;color:white;padding:12px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
+<a href="#menu"
+   style="position:fixed;bottom:150px;right:20px;background:black;color:white;padding:12px 20px;border-radius:50px;font-weight:bold;">
 🍽️ Ver carta
 </a>
 
-<!-- SCRIPTS -->
+<!-- CARRUSEL SCRIPT -->
 <script>
-function setLang(lang) {
-  document.querySelectorAll('.es').forEach(e => {
-    e.style.display = (lang === 'es') ? 'block' : 'none';
-  });
-
-  document.querySelectorAll('.en').forEach(e => {
-    e.style.display = (lang === 'en') ? 'block' : 'none';
-  });
-}
-
-/* CARRUSEL */
 let index = 0;
 
 setInterval(() => {
