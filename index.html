@@ -49,8 +49,7 @@
 <body>
 
 <!-- HERO -->
-<div class="hero">
-</div>
+<div class="hero"></div>
 
 <!-- INTRO -->
 <section>
@@ -70,38 +69,19 @@
   <div class="item">🍷 Vino canario</div>
 </section>
 
-<!-- ⭐ RESEÑAS -->
+<!-- RESEÑAS -->
 <section style="background:#f9f9f9;">
   <h2>⭐ Opiniones de nuestros clientes</h2>
 
   <div style="max-width:700px;margin:auto;overflow:hidden;border-radius:15px;">
     <div id="carousel" style="display:flex;transition:transform 0.5s ease;">
 
-      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
-         target="_blank" style="min-width:100%;color:inherit;">
-        <div class="card">
-          ⭐⭐⭐⭐⭐
-          <p>“Comida increíble y vistas espectaculares al mar.”</p>
-          <strong>Ver en Google</strong>
-        </div>
+      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews" target="_blank" style="min-width:100%;color:inherit;">
+        <div class="card">⭐⭐⭐⭐⭐<p>“Comida increíble y vistas espectaculares.”</p><strong>Ver en Google</strong></div>
       </a>
 
-      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
-         target="_blank" style="min-width:100%;color:inherit;">
-        <div class="card">
-          ⭐⭐⭐⭐⭐
-          <p>“El mejor atardecer de Costa Adeje.”</p>
-          <strong>Ver en Google</strong>
-        </div>
-      </a>
-
-      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews"
-         target="_blank" style="min-width:100%;color:inherit;">
-        <div class="card">
-          ⭐⭐⭐⭐⭐
-          <p>“Servicio excelente y ambiente perfecto.”</p>
-          <strong>Ver en Google</strong>
-        </div>
+      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews" target="_blank" style="min-width:100%;color:inherit;">
+        <div class="card">⭐⭐⭐⭐⭐<p>“El mejor atardecer de Costa Adeje.”</p><strong>Ver en Google</strong></div>
       </a>
 
     </div>
@@ -127,10 +107,9 @@
     width="100%" height="320"
     style="border:0;border-radius:15px;margin-top:10px;">
   </iframe>
-
 </section>
 
-<!-- BOTONES FLOTANTES -->
+<!-- BOTONES -->
 <a href="tel:+34682106678" id="callBtn"
    style="
    position:fixed;
@@ -143,9 +122,25 @@
    font-weight:bold;
    box-shadow:0 5px 15px rgba(0,0,0,0.3);
    z-index:999;
-   transition:0.3s;
    ">
 📞 Llamar ahora
+</a>
+
+<a id="openTimeBtn"
+   style="
+   position:fixed;
+   bottom:160px;
+   left:20px;
+   background:#ffcc00;
+   color:black;
+   padding:15px 20px;
+   border-radius:50px;
+   font-weight:bold;
+   text-decoration:none;
+   box-shadow:0 5px 15px rgba(0,0,0,0.3);
+   z-index:999;
+   ">
+⏳ Calculando...
 </a>
 
 <a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa"
@@ -154,39 +149,80 @@
 💬 WhatsApp
 </a>
 
-<a href="#menu"
-   style="position:fixed;bottom:150px;right:20px;background:black;color:white;padding:12px 20px;border-radius:50px;font-weight:bold;z-index:999;">
-🍽️ Ver carta
-</a>
-
-<!-- BOTÓN INTELIGENTE (LLAMAR / WHATSAPP SEGÚN HORARIO) -->
+<!-- SCRIPT -->
 <script>
+
 function isOpen() {
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours() + now.getMinutes()/60;
 
-  // Lunes y martes cerrado
   if (day === 1 || day === 2) return false;
-
-  // 12:00 - 22:30
   if (hour < 12 || hour >= 22.5) return false;
 
   return true;
 }
 
-const btn = document.getElementById("callBtn");
+/* BOTÓN LLAMAR */
+const callBtn = document.getElementById("callBtn");
 
 if (isOpen()) {
-  btn.style.background = "#25D366";
-  btn.innerText = "🟢 Abierto - Llamar ahora";
-  btn.href = "tel:+34682106678";
+  callBtn.style.background = "#25D366";
+  callBtn.innerText = "🟢 Abierto - Llamar ahora";
 } else {
-  btn.style.background = "#ff3b30";
-  btn.innerText = "🔴 Cerrado - WhatsApp";
-  btn.href =
-    "https://wa.me/34672792801?text=Hola%2C%20quiero%20reservar%20mesa.%20He%20visto%20que%20ahora%20est%C3%A1is%20cerrados%20en%20El%20Horno%20de%20Neptuno.";
+  callBtn.style.background = "#ff3b30";
+  callBtn.innerText = "🔴 Cerrado - WhatsApp";
+  callBtn.href =
+    "https://wa.me/34672792801?text=Hola%2C%20quiero%20reservar%20mesa";
 }
+
+/* BOTÓN TIEMPO */
+function updateOpenTime() {
+  const btn = document.getElementById("openTimeBtn");
+
+  const now = new Date();
+  const day = now.getDay();
+
+  if (day === 1 || day === 2) {
+    btn.style.background = "#ff3b30";
+    btn.style.color = "white";
+    btn.innerText = "🔴 Hoy cerrado";
+    return;
+  }
+
+  let openTime = new Date();
+  openTime.setHours(12, 0, 0, 0);
+
+  let diff = openTime - now;
+
+  if (diff <= 0 && isOpen()) {
+    btn.style.background = "#25D366";
+    btn.innerText = "🟢 Estamos abiertos";
+  } else {
+    let h = Math.floor(diff / (1000*60*60));
+    let m = Math.floor((diff%(1000*60*60))/(1000*60));
+
+    btn.style.background = "#ffcc00";
+    btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
+  }
+}
+
+updateOpenTime();
+setInterval(updateOpenTime, 60000);
+
+/* CARRUSEL */
+let index = 0;
+setInterval(() => {
+  const c = document.getElementById("carousel");
+  if (!c) return;
+  const total = c.children.length;
+
+  index++;
+  if (index >= total) index = 0;
+
+  c.style.transform = "translateX(" + (-index * 100) + "%)";
+}, 3000);
+
 </script>
 
 </body>
