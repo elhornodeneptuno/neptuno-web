@@ -1,249 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>El Horno de Neptuno</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>El Horno de Neptuno</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-  body { margin:0; font-family: Arial; }
+body { margin:0; font-family: Arial; }
 
-  .en, .de, .fr { display: none; }
+/* HERO */
+.hero{
+  height:100vh;
+  background:url('./logo.jpg') center/cover;
+}
+
+/* GENERAL */
+section { padding:50px 20px; text-align:center; }
+
+.item{
+  background:white;
+  padding:15px;
+  margin:10px auto;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  max-width:500px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* OCULTAR IDIOMAS */
+.en, .de, .fr { display:none; }
 </style>
-  .en { display: none; }
-    .hero {
-      height:100vh;
-      background:url('./logo.jpg') center/cover;
-      color:white;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-    }
-
-    section { padding:50px 20px; text-align:center; }
-
-    .menu { background:#f5f5f5; }
-
-    .item{
-      background:white;
-      padding:15px;
-      margin:10px auto;
-      border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      max-width:500px;
-    }
-
-    .card{
-      background:white;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      display:inline-block;
-      margin-top:10px;
-    }
-
-    a { text-decoration:none; }
-  </style>
 </head>
 
 <body>
 
-<!-- 🌍 IDIOMA -->
-<div style="position:fixed;top:15px;left:15px;z-index:999;">
-  <button onclick="setLang('es')" style="padding:8px 12px;border:none;border-radius:20px;">🇪🇸 ES</button>
-  <button onclick="setLang('en')" style="padding:8px 12px;border:none;border-radius:20px;">🇬🇧 EN</button>
-</div>
-
-<!-- HERO -->
+<!-- HERO SOLO IMAGEN -->
 <div class="hero"></div>
 
 <!-- INTRO -->
 <section>
   <h2 class="es">Un rincón único frente al océano</h2>
-  <h2 class="en" style="display:none;">A unique spot by the ocean</h2>
+  <h2 class="en">A unique spot by the ocean</h2>
+  <h2 class="de">Ein einzigartiger Ort am Meer</h2>
+  <h2 class="fr">Un endroit unique face à l’océan</h2>
 
-  <p class="es">Disfruta tapas con vistas increíbles y atardeceres inolvidables.</p>
-  <p class="en" style="display:none;">Enjoy tapas with stunning ocean views and sunsets.</p>
+  <p class="es">Disfruta tapas con vistas increíbles.</p>
+  <p class="en">Enjoy tapas with stunning views.</p>
+  <p class="de">Genießen Sie Tapas mit Aussicht.</p>
+  <p class="fr">Profitez de tapas avec vue.</p>
 </section>
 
 <!-- MENÚ -->
-<section id="menu" class="menu">
-  <h2 class="es">🍽️ Nuestra Carta</h2>
-  <h2 class="en" style="display:none;">🍽️ Our Menu</h2>
-
-  <div class="item">🥖 Croquetas caseras - 8€</div>
-  <div class="item">🍟 Papas bravas - 8€</div>
-  <div class="item">🐙 Pulpo a la gallega - 8€</div>
-  <div class="item">🦐 Gambas al ajillo - 8€</div>
-  <div class="item">🍷 Vino canario</div>
-</section>
-
-<!-- ⭐ RESEÑAS -->
-<section style="background:#f9f9f9;">
-  <h2>⭐ Opiniones de nuestros clientes</h2>
-
-  <div style="max-width:700px;margin:auto;overflow:hidden;border-radius:15px;">
-    <div id="carousel" style="display:flex;transition:transform 0.5s ease;">
-
-      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews" target="_blank" style="min-width:100%;color:inherit;">
-        <div class="card">⭐⭐⭐⭐⭐<p>“Comida increíble y vistas espectaculares.”</p><strong>Ver en Google</strong></div>
-      </a>
-
-      <a href="https://www.google.com/maps/place/El+Horno+De+Neptuno/reviews" target="_blank" style="min-width:100%;color:inherit;">
-        <div class="card">⭐⭐⭐⭐⭐<p>“El mejor atardecer de Costa Adeje.”</p><strong>Ver en Google</strong></div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCIA -->
 <section>
-  <h2 class="es">Vive la experiencia</h2>
-  <h2 class="en" style="display:none;">Live the experience</h2>
+<h2>🍽️ Menu</h2>
 
-  <p>Mar, comida y atardecer en Costa Adeje</p>
+<div class="item">🥖 Croquetas - 8€</div>
+<div class="item">🍟 Papas bravas - 8€</div>
+<div class="item">🐙 Pulpo - 8€</div>
+<div class="item">🦐 Gambas - 8€</div>
 
-  <h3>🕒 Horario</h3>
-
-  <div class="card">
-    <p><strong>Lunes y martes:</strong> Cerrado</p>
-    <p><strong>Miércoles a domingo:</strong> 12:00 – 22:30</p>
-  </div>
-
-  <h3 style="margin-top:40px;">📍 Cómo llegar</h3>
-
-  <iframe 
-    src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
-    width="100%" height="320"
-    style="border:0;border-radius:15px;margin-top:10px;">
-  </iframe>
 </section>
 
-<!-- BOTÓN TIEMPO -->
-<a id="openTimeBtn"
-   style="position:fixed;bottom:160px;left:20px;background:#ffcc00;padding:15px 20px;border-radius:50px;font-weight:bold;z-index:999;">
-⏳ Calculando...
+<!-- RESEÑAS -->
+<section style="background:#f9f9f9;">
+<h2>⭐ Opiniones</h2>
+
+<div style="max-width:700px;margin:auto;overflow:hidden;">
+  <div id="carousel" style="display:flex;transition:0.5s;">
+
+    <a href="https://www.google.com/maps" target="_blank" style="min-width:100%;">
+      <div class="card">⭐⭐⭐⭐⭐<p>“Increíble comida y vistas”</p></div>
+    </a>
+
+    <a href="https://www.google.com/maps" target="_blank" style="min-width:100%;">
+      <div class="card">⭐⭐⭐⭐⭐<p>“Best sunset in Tenerife”</p></div>
+    </a>
+
+  </div>
+</div>
+</section>
+
+<!-- INFO -->
+<section>
+<h2>Vive la experiencia</h2>
+
+<div class="card">
+<p>Lunes y martes cerrado</p>
+<p>Mié - Dom: 12:00 - 22:30</p>
+</div>
+
+<h3>📍 Cómo llegar</h3>
+
+<a href="https://www.google.com/maps/dir/?api=1&destination=El+Horno+de+Neptuno"
+style="display:inline-block;margin-top:15px;background:black;color:white;padding:12px 20px;border-radius:10px;">
+Cómo llegar 1 click
 </a>
 
-<!-- BOTÓN LLAMAR -->
-<a href="tel:+34682106678" id="callBtn"
-   style="position:fixed;bottom:20px;left:20px;padding:15px 20px;border-radius:50px;color:white;font-weight:bold;z-index:999;">
+<iframe
+src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
+width="100%" height="300" style="border:0;margin-top:15px;border-radius:15px;">
+</iframe>
+
+</section>
+
+<!-- BOTONES -->
+<a id="callBtn"
+style="position:fixed;bottom:20px;left:20px;padding:15px 20px;border-radius:50px;color:white;font-weight:bold;text-decoration:none;">
 📞 Llamar
 </a>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa"
-   target="_blank"
-   style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;font-weight:bold;z-index:999;">
+<a id="openTimeBtn"
+style="position:fixed;bottom:160px;left:20px;background:#ffcc00;padding:15px 20px;border-radius:50px;font-weight:bold;">
+⏳ Calculando...
+</a>
+
+<a href="https://wa.me/34672792801"
+style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50px;font-weight:bold;">
 💬 WhatsApp
 </a>
 
-<!-- SCRIPTS (ORDENADOS LIMPIOS) -->
+<!-- SCRIPT PRO -->
 <script>
 
-/* 🌍 IDIOMA */
-function setLang(lang){
-  localStorage.setItem("lang", lang);
-
-  document.querySelectorAll('.es, .en').forEach(e=>{
-    e.style.display = "none";
-  });
-
-  document.querySelectorAll('.' + lang).forEach(e=>{
-    e.style.display = "";
-  });
-}
-
-/* AUTO IDIOMA */
+/* 🌍 IDIOMA AUTOMÁTICO TURISTA */
 (function(){
-  const saved = localStorage.getItem("lang");
-  const browserLang = (navigator.language || "en").toLowerCase();
+  const lang = (navigator.language || "").toLowerCase();
 
-  const lang = saved || (browserLang.startsWith("es") ? "es" : "en");
+  let set = "en";
 
-  setLang(lang);
+  if(lang.startsWith("es")) set = "es";
+  else if(lang.startsWith("de")) set = "de";
+  else if(lang.startsWith("fr")) set = "fr";
+  else set = "en";
+
+  document.querySelectorAll('.es').forEach(e=>e.style.display = set==="es"?"block":"none");
+  document.querySelectorAll('.en').forEach(e=>e.style.display = set==="en"?"block":"none");
+  document.querySelectorAll('.de').forEach(e=>e.style.display = set==="de"?"block":"none");
+  document.querySelectorAll('.fr').forEach(e=>e.style.display = set==="fr"?"block":"none");
 })();
 
-/* 🕒 HORARIO */
+
+/* HORARIO PRO CORREGIDO */
 function isOpen(){
   const now = new Date();
   const d = now.getDay();
   const h = now.getHours() + now.getMinutes()/60;
 
-  if(d === 1 || d === 2) return false; // lunes/martes cerrado
+  if(d === 1 || d === 2) return false;
   if(h < 12 || h >= 22.5) return false;
 
   return true;
 }
 
-/* 📞 BOTÓN LLAMAR */
-function updateCallButton(){
+/* BOTÓN LLAMAR */
+const callBtn = document.getElementById("callBtn");
 
-  const btn = document.getElementById("callBtn");
-  if(!btn) return;
-
-  if(isOpen()){
-    btn.style.background = "#25D366";
-    btn.innerText = "🟢 Abierto - Llamar ahora";
-    btn.href = "tel:+34682106678";
-  } else {
-    btn.style.background = "#ff3b30";
-    btn.innerText = "🔴 Cerrado - WhatsApp";
-    btn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
-  }
+if(isOpen()){
+  callBtn.style.background = "#25D366";
+  callBtn.innerText = "🟢 Abierto - Llamar";
+  callBtn.href = "tel:+34682106678";
+}else{
+  callBtn.style.background = "#ff3b30";
+  callBtn.innerText = "🔴 Cerrado - WhatsApp";
+  callBtn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
 }
 
-updateCallButton();
-
-/* ⏳ CONTADOR ABRIMOS */
+/* ⏳ TIEMPO HASTA ABRIR (CORREGIDO LUNES/MARTES) */
 function updateOpenTime(){
-
   const btn = document.getElementById("openTimeBtn");
-  if(!btn) return;
-
   const now = new Date();
   const d = now.getDay();
 
-  // lunes/martes
   if(d === 1 || d === 2){
-    let next = new Date(now);
-    next.setDate(now.getDate() + (d === 1 ? 2 : 1));
-    next.setHours(12,0,0,0);
+    btn.style.background = "#ff3b30";
 
-    let diff = next - now;
+    // cálculo real hasta miércoles 12:00
+    let daysToAdd = (d === 1) ? 2 : 1; // lunes o martes
+    let nextOpen = new Date();
+    nextOpen.setDate(now.getDate() + daysToAdd);
+    nextOpen.setHours(12,0,0,0);
+
+    let diff = nextOpen - now;
+
     let h = Math.floor(diff/(1000*60*60));
     let m = Math.floor((diff%(1000*60*60))/(1000*60));
 
-    btn.style.background = "#ff3b30";
-    btn.style.color = "white";
-    btn.innerText = `🔴 Cerrado · Abrimos en ${h}h ${m}min`;
+    btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
     return;
   }
 
-  const open = new Date();
+  let open = new Date();
   open.setHours(12,0,0,0);
 
-  const close = new Date();
-  close.setHours(22,30,0,0);
+  let diff = open - now;
 
-  if(now >= open && now < close){
+  if(diff <= 0 && isOpen()){
     btn.style.background = "#25D366";
-    btn.innerText = "🟢 Abierto ahora";
-  } else {
-    let diff = open - now;
+    btn.innerText = "🟢 Abierto";
+  }else{
     let h = Math.floor(diff/(1000*60*60));
     let m = Math.floor((diff%(1000*60*60))/(1000*60));
-    btn.style.background = "#ffcc00";
     btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
   }
 }
 
 updateOpenTime();
-setInterval(updateOpenTime, 60000);
+setInterval(updateOpenTime,60000);
+
+
+/* CARRUSEL */
+let i = 0;
+setInterval(()=>{
+  const c = document.getElementById("carousel");
+  if(!c) return;
+
+  i++;
+  if(i >= c.children.length) i = 0;
+
+  c.style.transform = "translateX(" + (-i*100) + "%)";
+},3000);
 
 </script>
+
 </body>
 </html>
