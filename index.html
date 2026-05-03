@@ -141,7 +141,6 @@
 
 <!-- SCRIPTS (ORDENADOS LIMPIOS) -->
 <script>
-
 /* 🌍 IDIOMA */
 function setLang(lang){
   localStorage.setItem("lang", lang);
@@ -158,13 +157,12 @@ function setLang(lang){
 /* AUTO IDIOMA */
 (function(){
   const saved = localStorage.getItem("lang");
-  const browserLang = navigator.language || navigator.userLanguage;
+  const browserLang = (navigator.language || "en").toLowerCase();
 
-  if(saved) setLang(saved);
-  else if(browserLang.startsWith("es")) setLang("es");
-  else setLang("en");
+  const lang = saved || (browserLang.startsWith("es") ? "es" : "en");
+
+  setLang(lang);
 })();
-
 /* HORARIO */
 function isOpen(){
   const now=new Date();
