@@ -143,16 +143,17 @@
 
 <!-- SCRIPTS (ORDENADOS LIMPIOS) -->
 <script>
+
 /* 🌍 IDIOMA */
 function setLang(lang){
   localStorage.setItem("lang", lang);
 
-  document.querySelectorAll('.es').forEach(e=>{
-    e.style.display = (lang === 'es') ? '' : 'none';
+  document.querySelectorAll('.es, .en').forEach(e=>{
+    e.style.display = "none";
   });
 
-  document.querySelectorAll('.en').forEach(e=>{
-    e.style.display = (lang === 'en') ? '' : 'none';
+  document.querySelectorAll('.' + lang).forEach(e=>{
+    e.style.display = "";
   });
 }
 
@@ -165,81 +166,84 @@ function setLang(lang){
 
   setLang(lang);
 })();
-/* HORARIO */
+
+/* 🕒 HORARIO */
 function isOpen(){
-  const now=new Date();
-  const d=now.getDay();
-  const h=now.getHours()+now.getMinutes()/60;
-  if(d===1||d===2) return false;
-  if(h<12||h>=22.5) return false;
+  const now = new Date();
+  const d = now.getDay();
+  const h = now.getHours() + now.getMinutes()/60;
+
+  if(d === 1 || d === 2) return false; // lunes/martes cerrado
+  if(h < 12 || h >= 22.5) return false;
+
   return true;
 }
 
-/* BOTÓN LLAMAR */
-const callBtn=document.getElementById("callBtn");
+/* 📞 BOTÓN LLAMAR */
+function updateCallButton(){
 
-if(isOpen()){
-  callBtn.style.background="#25D366";
-  callBtn.innerText="🟢 Abierto - Llamar";
-}else{
-  callBtn.style.background="#ff3b30";
-  callBtn.innerText="🔴 Cerrado - WhatsApp";
-  callBtn.href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
+  const btn = document.getElementById("callBtn");
+  if(!btn) return;
+
+  if(isOpen()){
+    btn.style.background = "#25D366";
+    btn.innerText = "🟢 Abierto - Llamar ahora";
+    btn.href = "tel:+34682106678";
+  } else {
+    btn.style.background = "#ff3b30";
+    btn.innerText = "🔴 Cerrado - WhatsApp";
+    btn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
+  }
 }
 
-/* CONTADOR ABRIMOS */
-function updateOpenTime(){
-  const btn=document.getElementById("openTimeBtn");
-  const now=new Date();
-  const d=now.getDay();
+updateCallButton();
 
-  if(d===1||d===2){
-    let next=new Date(now);
-    next.setDate(now.getDate() + (d===1?2:1));
+/* ⏳ CONTADOR ABRIMOS */
+function updateOpenTime(){
+
+  const btn = document.getElementById("openTimeBtn");
+  if(!btn) return;
+
+  const now = new Date();
+  const d = now.getDay();
+
+  // lunes/martes
+  if(d === 1 || d === 2){
+    let next = new Date(now);
+    next.setDate(now.getDate() + (d === 1 ? 2 : 1));
     next.setHours(12,0,0,0);
 
-    let diff=next-now;
-    let h=Math.floor(diff/(1000*60*60));
-    let m=Math.floor((diff%(1000*60*60))/(1000*60));
+    let diff = next - now;
+    let h = Math.floor(diff/(1000*60*60));
+    let m = Math.floor((diff%(1000*60*60))/(1000*60));
 
-    btn.style.background="#ff3b30";
-    btn.style.color="white";
-    btn.innerText=`🔴 Cerrado · Abrimos en ${h}h ${m}min`;
+    btn.style.background = "#ff3b30";
+    btn.style.color = "white";
+    btn.innerText = `🔴 Cerrado · Abrimos en ${h}h ${m}min`;
     return;
   }
 
-  let open=new Date();
+  const open = new Date();
   open.setHours(12,0,0,0);
 
-  let close=new Date();
+  const close = new Date();
   close.setHours(22,30,0,0);
 
-  if(now>=open && now<close){
-    btn.style.background="#25D366";
-    btn.innerText="🟢 Abierto ahora";
+  if(now >= open && now < close){
+    btn.style.background = "#25D366";
+    btn.innerText = "🟢 Abierto ahora";
   } else {
-    let diff=open-now;
-    let h=Math.floor(diff/(1000*60*60));
-    let m=Math.floor((diff%(1000*60*60))/(1000*60));
-    btn.style.background="#ffcc00";
-    btn.innerText=`⏳ Abrimos en ${h}h ${m}min`;
+    let diff = open - now;
+    let h = Math.floor(diff/(1000*60*60));
+    let m = Math.floor((diff%(1000*60*60))/(1000*60));
+    btn.style.background = "#ffcc00";
+    btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
   }
 }
 
 updateOpenTime();
-setInterval(updateOpenTime,60000);
-
-/* CARRUSEL */
-let i=0;
-setInterval(()=>{
-  const c=document.getElementById("carousel");
-  if(!c) return;
-  i++;
-  if(i>=c.children.length) i=0;
-  c.style.transform="translateX(" + (-i*100) + "%)";
-},3000);
+setInterval(updateOpenTime, 60000);
 
 </script>
-
 </body>
 </html>
