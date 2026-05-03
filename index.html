@@ -213,19 +213,6 @@ setInterval(()=>{
 },3000);
 
 </script>
-/* CARRUSEL */
-let i = 0;
-setInterval(()=>{
-  const c = document.getElementById("carousel");
-  if(!c) return;
-
-  i++;
-  if(i >= c.children.length) i = 0;
-
-  c.style.transform = "translateX(" + (-i*100) + "%)";
-},3000);
-
-</script>
 
 </body>
 </html>
