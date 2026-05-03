@@ -133,7 +133,7 @@
 
 </section>
 
-<!-- BOTONES FLOTANTES + BOTÓN INTELIGENTE -->
+<!-- BOTONES FLOTANTES -->
 <a href="tel:+34682106678" id="callBtn"
    style="
    position:fixed;
@@ -162,14 +162,17 @@
 🍽️ Ver carta
 </a>
 
-<!-- SCRIPT BOTÓN INTELIGENTE -->
+<!-- BOTÓN INTELIGENTE (LLAMAR / WHATSAPP SEGÚN HORARIO) -->
 <script>
 function isOpen() {
   const now = new Date();
   const day = now.getDay();
   const hour = now.getHours() + now.getMinutes()/60;
 
+  // Lunes y martes cerrado
   if (day === 1 || day === 2) return false;
+
+  // 12:00 - 22:30
   if (hour < 12 || hour >= 22.5) return false;
 
   return true;
@@ -180,10 +183,12 @@ const btn = document.getElementById("callBtn");
 if (isOpen()) {
   btn.style.background = "#25D366";
   btn.innerText = "🟢 Abierto - Llamar ahora";
+  btn.href = "tel:+34682106678";
 } else {
   btn.style.background = "#ff3b30";
-  btn.innerText = "🔴 Cerrado ahora";
-  btn.href = "#";
+  btn.innerText = "🔴 Cerrado - WhatsApp";
+  btn.href =
+    "https://wa.me/34672792801?text=Hola%2C%20quiero%20reservar%20mesa.%20He%20visto%20que%20ahora%20est%C3%A1is%20cerrados%20en%20El%20Horno%20de%20Neptuno.";
 }
 </script>
 
