@@ -109,7 +109,7 @@
   </iframe>
 </section>
 
-<!-- BOTONES -->
+<!-- BOTONES FLOTANTES -->
 <a href="tel:+34682106678" id="callBtn"
    style="
    position:fixed;
@@ -149,6 +149,25 @@
 💬 WhatsApp
 </a>
 
+<!-- 📍 BOTÓN CÓMO LLEGAR (YA INTEGRADO) -->
+<a href="https://www.google.com/maps/dir/?api=1&destination=El+Horno+de+Neptuno+Costa+Adeje"
+   target="_blank"
+   style="
+   position:fixed;
+   bottom:200px;
+   right:20px;
+   background:#1a73e8;
+   color:white;
+   padding:15px 20px;
+   border-radius:50px;
+   font-weight:bold;
+   text-decoration:none;
+   box-shadow:0 5px 15px rgba(0,0,0,0.3);
+   z-index:999;
+   ">
+📍 Cómo llegar
+</a>
+
 <!-- SCRIPT -->
 <script>
 
@@ -163,7 +182,7 @@ function isOpen() {
   return true;
 }
 
-/* BOTÓN LLAMAR */
+/* LLAMAR */
 const callBtn = document.getElementById("callBtn");
 
 if (isOpen()) {
@@ -176,7 +195,7 @@ if (isOpen()) {
     "https://wa.me/34672792801?text=Hola%2C%20quiero%20reservar%20mesa";
 }
 
-/* BOTÓN TIEMPO */
+/* TIEMPO */
 function updateOpenTime() {
   const btn = document.getElementById("openTimeBtn");
 
@@ -185,13 +204,12 @@ function updateOpenTime() {
 
   if (day === 1 || day === 2) {
     btn.style.background = "#ff3b30";
-    btn.style.color = "white";
     btn.innerText = "🔴 Hoy cerrado";
     return;
   }
 
   let openTime = new Date();
-  openTime.setHours(12, 0, 0, 0);
+  openTime.setHours(12,0,0,0);
 
   let diff = openTime - now;
 
@@ -199,16 +217,15 @@ function updateOpenTime() {
     btn.style.background = "#25D366";
     btn.innerText = "🟢 Estamos abiertos";
   } else {
-    let h = Math.floor(diff / (1000*60*60));
+    let h = Math.floor(diff/(1000*60*60));
     let m = Math.floor((diff%(1000*60*60))/(1000*60));
-
     btn.style.background = "#ffcc00";
     btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
   }
 }
 
 updateOpenTime();
-setInterval(updateOpenTime, 60000);
+setInterval(updateOpenTime,60000);
 
 /* CARRUSEL */
 let index = 0;
