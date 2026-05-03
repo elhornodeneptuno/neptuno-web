@@ -148,14 +148,34 @@
 
 /* IDIOMA */
 function setLang(lang){
+
+  // guardar preferencia
+  localStorage.setItem("lang", lang);
+
   document.querySelectorAll('.es').forEach(e=>{
-    e.style.display = lang==='es'?'block':'none';
+    e.style.display = (lang === 'es') ? '' : 'none';
   });
+
   document.querySelectorAll('.en').forEach(e=>{
-    e.style.display = lang==='en'?'block':'none';
+    e.style.display = (lang === 'en') ? '' : 'none';
   });
 }
 
+/* 🌍 AUTO IDIOMA (MÓVIL + MEMORIA) */
+(function autoLang(){
+  const saved = localStorage.getItem("lang");
+  const browserLang = navigator.language || navigator.userLanguage;
+
+  if(saved){
+    setLang(saved);
+  }
+  else if(browserLang.startsWith("es")){
+    setLang("es");
+  }
+  else {
+    setLang("en");
+  }
+})();
 /* HORARIO */
 function isOpen(){
   const now=new Date();
