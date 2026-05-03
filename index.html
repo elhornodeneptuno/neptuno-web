@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>El Horno de Neptuno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body { margin:0; font-family: Arial; }
     .hero {
       height:100vh;
-     background:url('./logo.jpg') center/cover;
+      background:url('./logo.jpg') center/cover;
       color:white;
       display:flex;
       flex-direction:column;
@@ -20,57 +21,53 @@
     .menu { background:#f5f5f5; }
   </style>
 </head>
+
 <body>
 
+<!-- 🌍 BOTÓN IDIOMA -->
+<div style="position:fixed;top:15px;left:15px;z-index:999;">
+  <button onclick="setLang('es')" style="padding:8px 12px;border:none;border-radius:20px;margin-right:5px;cursor:pointer;">🇪🇸 ES</button>
+  <button onclick="setLang('en')" style="padding:8px 12px;border:none;border-radius:20px;cursor:pointer;">🇬🇧 EN</button>
+</div>
+
 <div class="hero">
-  <h1>El Horno de Neptuno</h1>
-<p>Tapas frente al mar en Costa Adeje</p>
-<p><strong>Tapas by the sea with sunset views</strong></p>
+  <h1 class="es">El Horno de Neptuno</h1>
+  <h1 class="en" style="display:none;">The Neptuno Oven</h1>
+
+  <p class="es">Tapas frente al mar en Costa Adeje</p>
+  <p class="en" style="display:none;">Tapas by the sea in Costa Adeje</p>
 </div>
 
 <section>
-  <h2>Un rincón único frente al océano</h2>
-  <p>Disfruta tapas frente al mar con uno de los mejores atardeceres de Costa Adeje.</p>
-<p><strong>Enjoy tapas by the ocean with stunning sunset views.</strong></p>
-</section>
-<section id="menu" class="menu">
+  <h2 class="es">Un rincón único frente al océano</h2>
+  <h2 class="en" style="display:none;">A unique spot by the ocean</h2>
 
+  <p class="es">Disfruta tapas frente al mar con uno de los mejores atardeceres de Costa Adeje.</p>
+  <p class="en" style="display:none;">Enjoy tapas by the sea with one of the best sunsets in Costa Adeje.</p>
+</section>
+
+<section id="menu" class="menu">
   <h2>🍽️ Nuestra Carta</h2>
   <p>Tapas frente al mar en Costa Adeje</p>
 
-  <!-- BOTONES FILTRO -->
   <div style="margin:20px 0;">
-    <button onclick="showMenu('all')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;background:black;color:white;">Todo</button>
-    <button onclick="showMenu('tapas')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Tapas</button>
-    <button onclick="showMenu('mar')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Mar</button>
-    <button onclick="showMenu('bebidas')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Bebidas</button>
+    <button onclick="showMenu('all')">Todo</button>
+    <button onclick="showMenu('tapas')">Tapas</button>
+    <button onclick="showMenu('mar')">Mar</button>
+    <button onclick="showMenu('bebidas')">Bebidas</button>
   </div>
 
-  <!-- ITEMS -->
-  <div class="item tapas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    🥖 Croquetas caseras - 8€
-  </div>
-
-  <div class="item tapas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    🍟 Papas bravas - 8€
-  </div>
-
-  <div class="item mar" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    🐙 Pulpo a la gallega - 8€
-  </div>
-
-  <div class="item mar" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    🦐 Gambas al ajillo - 8€
-  </div>
-
-  <div class="item bebidas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-    🍷 Vino canario
-  </div>
-
+  <div class="item tapas">🥖 Croquetas caseras - 8€</div>
+  <div class="item tapas">🍟 Papas bravas - 8€</div>
+  <div class="item mar">🐙 Pulpo a la gallega - 8€</div>
+  <div class="item mar">🦐 Gambas al ajillo - 8€</div>
+  <div class="item bebidas">🍷 Vino canario</div>
 </section>
-</section>
+
 <section>
-  <h2>Vive la experiencia</h2>
+  <h2 class="es">Vive la experiencia</h2>
+  <h2 class="en" style="display:none;">Live the experience</h2>
+
   <p>Mar, comida y atardecer en Costa Adeje</p>
 
   <h3 style="margin-top:30px;">🕒 Horario</h3>
@@ -80,91 +77,51 @@
     <p><strong>Miércoles a domingo:</strong> 12:00 – 22:30</p>
   </div>
 
-  <!-- 👇 AQUÍ VA EL MAPA -->
   <h3 style="margin-top:30px;">📍 Cómo llegar</h3>
 
   <iframe 
     src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
-    width="100%" 
-    height="300" 
-    style="border:0;margin-top:15px;border-radius:15px;"
-    allowfullscreen="" 
-    loading="lazy">
+    width="100%" height="300"
+    style="border:0;margin-top:15px;border-radius:15px;">
   </iframe>
-
-  <a href="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje" target="_blank" style="
-    display:inline-block;
-    margin-top:15px;
-    background:black;
-    color:white;
-    padding:12px 20px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-  ">
-  📍 Abrir en Google Maps
-  </a>
-
 </section>
-<a href="tel:+34682106678" style="
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-">
+
+<!-- 📞 BOTONES -->
+<a href="tel:+34682106678" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
 📞 Reservar mesa
 </a>
 
-<a href="https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa%20/%20Hello%20I%20would%20like%20to%20book%20a%20table" target="_blank" style="
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-">
+<a href="https://wa.me/34672792801?text=Hola%20/%20Hello%20quiero%20reservar%20mesa" target="_blank" style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
 💬 WhatsApp
 </a>
-  <a href="#menu" style="
-  position:fixed;
-  bottom:150px;
-  right:20px;
-  background:black;
-  color:white;
-  padding:12px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-">
+
+<a href="#menu" style="position:fixed;bottom:150px;right:20px;background:black;color:white;padding:12px 20px;border-radius:50px;text-decoration:none;font-weight:bold;">
 🍽️ Ver carta
 </a>
-  <script>
+
+<!-- ⚙️ SCRIPTS -->
+<script>
 function showMenu(type) {
   let items = document.querySelectorAll('.item');
-
   items.forEach(item => {
-    if (type === 'all') {
+    if (type === 'all' || item.classList.contains(type)) {
       item.style.display = 'block';
     } else {
-      if (item.classList.contains(type)) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
+      item.style.display = 'none';
     }
   });
 }
+
+function setLang(lang) {
+  document.querySelectorAll('.es').forEach(e => {
+    e.style.display = (lang === 'es') ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.en').forEach(e => {
+    e.style.display = (lang === 'en') ? 'block' : 'none';
+  });
+}
 </script>
+
 </body>
 </html>
