@@ -33,31 +33,41 @@
   <p>Disfruta tapas frente al mar con uno de los mejores atardeceres de Costa Adeje.</p>
 <p><strong>Enjoy tapas by the ocean with stunning sunset views.</strong></p>
 </section>
-
 <section id="menu" class="menu">
+
   <h2>🍽️ Nuestra Carta</h2>
-  <p style="margin-bottom:30px;">Tapas frente al mar en Costa Adeje</p>
+  <p>Tapas frente al mar en Costa Adeje</p>
 
-  <div style="max-width:800px;margin:auto;display:grid;gap:20px;">
-
-    <div style="background:white;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      <h3>🥖 Tapas clásicas</h3>
-      <p>Croquetas caseras · Papas bravas · Jamon iberico</p>
-      <strong>8€ cada tapa</strong>
-    </div>
-
-    <div style="background:white;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      <h3>🌊 Del mar</h3>
-      <p>Calamares · Gambas al ajillo · Boquerones</p>
-      <strong>8€ cada tapa</strong>
-    </div>
-
-    <div style="background:white;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-      <h3>🍷 Bebidas</h3>
-      <p>Vinos canarios · Sangría · Cervezas frías</p>
-    </div>
-
+  <!-- BOTONES FILTRO -->
+  <div style="margin:20px 0;">
+    <button onclick="showMenu('all')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;background:black;color:white;">Todo</button>
+    <button onclick="showMenu('tapas')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Tapas</button>
+    <button onclick="showMenu('mar')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Mar</button>
+    <button onclick="showMenu('bebidas')" style="padding:10px 15px;margin:5px;border-radius:20px;border:none;">Bebidas</button>
   </div>
+
+  <!-- ITEMS -->
+  <div class="item tapas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    🥖 Croquetas caseras - 8€
+  </div>
+
+  <div class="item tapas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    🍟 Papas bravas - 8€
+  </div>
+
+  <div class="item mar" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    🐙 Pulpo a la gallega - 8€
+  </div>
+
+  <div class="item mar" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    🦐 Gambas al ajillo - 8€
+  </div>
+
+  <div class="item bebidas" style="background:white;padding:15px;margin:10px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+    🍷 Vino canario
+  </div>
+
+</section>
 </section>
 <section>
   <h2>Vive la experiencia</h2>
