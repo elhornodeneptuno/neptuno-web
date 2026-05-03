@@ -180,49 +180,55 @@ if(isOpen()){
   callBtn.innerText = "🔴 Cerrado - WhatsApp";
   callBtn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
 }
-
-/* ⏳ TIEMPO HASTA ABRIR (CORREGIDO LUNES/MARTES) */
-function updateOpenTime(){
-  const btn = document.getElementById("openTimeBtn");
+<script>
+/* HORARIO */
+function isOpen(){
   const now = new Date();
-  const d = now.getDay();
+  const day = now.getDay();
+  const hour = now.getHours() + now.getMinutes()/60;
 
-  if(d === 1 || d === 2){
-    btn.style.background = "#ff3b30";
+  // lunes y martes cerrado
+  if(day === 1 || day === 2) return false;
 
-    // cálculo real hasta miércoles 12:00
-    let daysToAdd = (d === 1) ? 2 : 1; // lunes o martes
-    let nextOpen = new Date();
-    nextOpen.setDate(now.getDate() + daysToAdd);
-    nextOpen.setHours(12,0,0,0);
+  // 12:00 - 22:30
+  if(hour < 12 || hour >= 22.5) return false;
 
-    let diff = nextOpen - now;
+  return true;
+}
 
-    let h = Math.floor(diff/(1000*60*60));
-    let m = Math.floor((diff%(1000*60*60))/(1000*60));
+/* BOTÓN LLAMAR */
+const callBtn = document.getElementById("callBtn");
 
-    btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
-    return;
-  }
-
-  let open = new Date();
-  open.setHours(12,0,0,0);
-
-  let diff = open - now;
-
-  if(diff <= 0 && isOpen()){
-    btn.style.background = "#25D366";
-    btn.innerText = "🟢 Abierto";
-  }else{
-    let h = Math.floor(diff/(1000*60*60));
-    let m = Math.floor((diff%(1000*60*60))/(1000*60));
-    btn.innerText = `⏳ Abrimos en ${h}h ${m}min`;
+function updateCallBtn(){
+  if(isOpen()){
+    callBtn.style.background = "#25D366";
+    callBtn.innerText = "🟢 Abierto - Llamar ahora";
+    callBtn.href = "tel:+34682106678";
+  } else {
+    callBtn.style.background = "#ff3b30";
+    callBtn.innerText = "🔴 Cerrado - WhatsApp";
+    callBtn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
   }
 }
 
-updateOpenTime();
-setInterval(updateOpenTime,60000);
+updateCallBtn();
 
+/* BOTÓN ESTADO (ABIERTO/CERRADO SIMPLE) */
+const openBtn = document.getElementById("openTimeBtn");
+
+function updateStatusBtn(){
+  if(isOpen()){
+    openBtn.innerText = "🟢 ABIERTO";
+    openBtn.style.background = "#25D366";
+  } else {
+    openBtn.innerText = "🔴 CERRADO";
+    openBtn.style.background = "#ff3b30";
+  }
+}
+
+updateStatusBtn();
+setInterval(updateStatusBtn, 60000);
+</script>
 
 /* CARRUSEL */
 let i = 0;
