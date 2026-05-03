@@ -33,14 +33,14 @@ section { padding:50px 20px; text-align:center; }
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* OCULTAR IDIOMAS */
+/* idiomas */
 .en, .de, .fr { display:none; }
 </style>
 </head>
 
 <body>
 
-<!-- HERO SOLO IMAGEN -->
+<!-- HERO -->
 <div class="hero"></div>
 
 <!-- INTRO -->
@@ -64,7 +64,6 @@ section { padding:50px 20px; text-align:center; }
 <div class="item">🍟 Papas bravas - 8€</div>
 <div class="item">🐙 Pulpo - 8€</div>
 <div class="item">🦐 Gambas - 8€</div>
-
 </section>
 
 <!-- RESEÑAS -->
@@ -97,75 +96,67 @@ section { padding:50px 20px; text-align:center; }
 
 <h3>📍 Cómo llegar</h3>
 
-<a href="https://www.google.com/maps/dir/?api=1&destination=El+Horno+de+Neptuno"
+<!-- BOTÓN 1 CLICK -->
+<a href="https://www.google.com/maps/dir/?api=1&destination=El+Horno+de+Neptuno+Costa+Adeje"
 style="display:inline-block;margin-top:15px;background:black;color:white;padding:12px 20px;border-radius:10px;">
 Cómo llegar 1 click
 </a>
 
 <iframe
 src="https://www.google.com/maps?q=El+Horno+de+Neptuno+Costa+Adeje&output=embed"
-width="100%" height="300" style="border:0;margin-top:15px;border-radius:15px;">
+width="100%" height="300"
+style="border:0;margin-top:15px;border-radius:15px;">
 </iframe>
 
 </section>
 
-<!-- BOTONES -->
+<!-- BOTONES FLOTANTES -->
 <a id="callBtn"
-style="position:fixed;bottom:20px;left:20px;padding:15px 20px;border-radius:50px;color:white;font-weight:bold;text-decoration:none;">
+style="position:fixed;bottom:20px;left:20px;padding:15px 20px;border-radius:50px;color:white;font-weight:bold;text-decoration:none;z-index:999;">
 📞 Llamar
 </a>
 
 <a id="openTimeBtn"
-   style="
-   position:fixed;
-   bottom:160px;
-   left:20px;
-   padding:15px 20px;
-   border-radius:50px;
-   font-weight:bold;
-   color:white;
-   z-index:999;
-   box-shadow:0 5px 15px rgba(0,0,0,0.3);
-   text-decoration:none;">
+style="position:fixed;bottom:160px;left:20px;padding:15px 20px;border-radius:50px;font-weight:bold;color:white;z-index:999;">
 🔄 Estado...
 </a>
 
 <a href="https://wa.me/34672792801"
-style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50px;font-weight:bold;">
+style="position:fixed;bottom:90px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50px;font-weight:bold;z-index:999;">
 💬 WhatsApp
 </a>
+
+<!-- SCRIPT PRO LIMPIO -->
 <script>
-/* 🌍 IDIOMA AUTOMÁTICO TURISTA */
+
+/* 🌍 idioma automático */
 (function(){
   const lang = (navigator.language || "").toLowerCase();
 
   let set = "en";
-
   if(lang.startsWith("es")) set = "es";
   else if(lang.startsWith("de")) set = "de";
   else if(lang.startsWith("fr")) set = "fr";
 
-  document.querySelectorAll('.es').forEach(e=>e.style.display = set==="es"?"block":"none");
-  document.querySelectorAll('.en').forEach(e=>e.style.display = set==="en"?"block":"none");
-  document.querySelectorAll('.de').forEach(e=>e.style.display = set==="de"?"block":"none");
-  document.querySelectorAll('.fr').forEach(e=>e.style.display = set==="fr"?"block":"none");
+  document.querySelectorAll('.es').forEach(e=>e.style.display=set==="es"?"block":"none");
+  document.querySelectorAll('.en').forEach(e=>e.style.display=set==="en"?"block":"none");
+  document.querySelectorAll('.de').forEach(e=>e.style.display=set==="de"?"block":"none");
+  document.querySelectorAll('.fr').forEach(e=>e.style.display=set==="fr"?"block":"none");
 })();
 
-
-/* 🕒 HORARIO */
+/* horario */
 function isOpen(){
   const now = new Date();
-  const day = now.getDay();
-  const hour = now.getHours() + now.getMinutes()/60;
+  const d = now.getDay();
+  const h = now.getHours() + now.getMinutes()/60;
 
-  if(day === 1 || day === 2) return false;
-  if(hour < 12 || hour >= 22.5) return false;
+  if(d === 1 || d === 2) return false;
+  if(h < 12 || h >= 22.5) return false;
 
   return true;
 }
 
-
-/* 📞 BOTÓN LLAMAR */
+/* botón llamar */
 const callBtn = document.getElementById("callBtn");
 
 function updateCallBtn(){
@@ -179,14 +170,12 @@ function updateCallBtn(){
     callBtn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
   }
 }
-
 updateCallBtn();
 
-
-/* 🔘 BOTÓN ESTADO */
+/* estado simple */
 const openBtn = document.getElementById("openTimeBtn");
 
-function updateStatusBtn(){
+function updateStatus(){
   if(isOpen()){
     openBtn.innerText = "🟢 ABIERTO";
     openBtn.style.background = "#25D366";
@@ -195,12 +184,10 @@ function updateStatusBtn(){
     openBtn.style.background = "#ff3b30";
   }
 }
+updateStatus();
+setInterval(updateStatus, 60000);
 
-updateStatusBtn();
-setInterval(updateStatusBtn, 60000);
-
-
-/* 🎠 CARRUSEL */
+/* carrusel */
 let i = 0;
 setInterval(()=>{
   const c = document.getElementById("carousel");
