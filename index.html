@@ -57,88 +57,202 @@ section { padding:50px 20px; text-align:center; }
 </section>
 
 <!-- MENÚ -->
-<section>
+<nav>
+<a href="#tapas">Tapas</a>
+<a href="#postres">Postres</a>
+<a href="#bebidas">Bebidas</a>
+<a href="#vinos">Vinos</a>
+</nav>
+
+<section id="tapas">
 <h2>🍽️ Tapas (8€)</h2>
-<div class="menu-item"><span>Tortilla de patata</span><span>8€</span></div>
-<div class="menu-item"><span>Pisto manchego con huevo</span><span>8€</span></div>
-<div class="menu-item"><span>Aros de cebolla</span><span>8€</span></div>
-<div class="menu-item"><span>Gazpacho andaluz</span><span>8€</span></div>
-<div class="menu-item"><span>Champiñones al ajillo</span><span>8€</span></div>
-<div class="menu-item"><span>Pimientos de Padrón</span><span>8€</span></div>
-<div class="menu-item"><span>Patatas bravas</span><span>8€</span></div>
-<div class="menu-item"><span>Papas arrugadas con mojo</span><span>8€</span></div>
-<div class="menu-item"><span>Queso de cabra con cebolla</span><span>8€</span></div>
-<div class="menu-item"><span>Queso con miel y nueces</span><span>8€</span></div>
-<div class="menu-item"><span>Chopitos fritos</span><span>8€</span></div>
-<div class="menu-item"><span>Tartar de salmón</span><span>8€</span></div>
-<div class="menu-item"><span>Tataki de atún</span><span>8€</span></div>
-<div class="menu-item"><span>Gambas al ajillo</span><span>8€</span></div>
-<div class="menu-item"><span>Gambones a la plancha</span><span>8€</span></div>
-<div class="menu-item"><span>Calamares a la romana</span><span>8€</span></div>
-<div class="menu-item"><span>Rejos de calamar</span><span>8€</span></div>
-<div class="menu-item"><span>Merluza con salsa tártara</span><span>8€</span></div>
-<div class="menu-item"><span>Pimiento relleno de bacalao</span><span>8€</span></div>
-<div class="menu-item"><span>Boquerones en vinagre</span><span>8€</span></div>
-<div class="menu-item"><span>Churros de merluza</span><span>8€</span></div>
-<div class="menu-item"><span>Tosta de brie con salmón</span><span>8€</span></div>
-<div class="menu-item"><span>Ensaladilla rusa</span><span>8€</span></div>
-<div class="menu-item"><span>Jamón ibérico</span><span>8€</span></div>
-<div class="menu-item"><span>Ensalada César</span><span>8€</span></div>
-<div class="menu-item"><span>Solomillo de cerdo</span><span>8€</span></div>
-<div class="menu-item"><span>Croquetas de pollo</span><span>8€</span></div>
-<div class="menu-item"><span>Brocheta de pollo</span><span>8€</span></div>
-<div class="menu-item"><span>Croquetas de jamón</span><span>8€</span></div>
-<div class="menu-item"><span>Chistorra</span><span>8€</span></div>
-<div class="menu-item"><span>Morcilla con pimiento</span><span>8€</span></div>
-<div class="menu-item"><span>Alitas de pollo</span><span>8€</span></div>
-<div class="menu-item"><span>Albóndigas</span><span>8€</span></div>
-<div class="menu-item"><span>Tosta de pollo curry</span><span>8€</span></div>
-<div class="menu-item"><span>Huevos rotos</span><span>8€</span></div>
-<div class="menu-item"><span>Chorizo a la sidra</span><span>8€</span></div>
-<div class="menu-item"><span>Quesadilla</span><span>8€</span></div>
-<div class="menu-item"><span>Nachos</span><span>8€</span></div>
-<div class="menu-item"><span>Mini hamburguesas</span><span>8€</span></div>
-<div class="menu-item"><span>Carrillera estofada</span><span>8€</span></div>
-</section>
-
-<section>
-<h2>🍰 Postres</h2>
-<div class="menu-item"><span>Tarta de zanahoria</span><span>7,5€</span></div>
-<div class="menu-item"><span>Brownie con helado</span><span>7,5€</span></div>
-<div class="menu-item"><span>Tarta de queso</span><span>7,5€</span></div>
-<div class="menu-item"><span>Crema catalana</span><span>6,5€</span></div>
-<div class="menu-item"><span>Tiramisú</span><span>7,5€</span></div>
-<div class="menu-item"><span>Sorbete de limón</span><span>4,5€</span></div>
-<div class="menu-item"><span>Helado de coco</span><span>5€</span></div>
-</section>
-
-<section>
-<h2>☕ Cafés</h2>
-<div class="menu-item"><span>Espresso</span><span>2,2€</span></div>
-<div class="menu-item"><span>Doble</span><span>2,9€</span></div>
-<div class="menu-item"><span>Americano</span><span>2,2€</span></div>
-<div class="menu-item"><span>Cortado</span><span>2,2€</span></div>
-<div class="menu-item"><span>Con leche</span><span>2,2€</span></div>
-<div class="menu-item"><span>Capuchino</span><span>2,9€</span></div>
-</section>
-
-<section>
-<h2>🍹 Cócteles</h2>
-<div class="menu-item"><span>Mojito</span><span>8,5€</span></div>
-<div class="menu-item"><span>Piña Colada</span><span>8,3€</span></div>
-<div class="menu-item"><span>Daiquiri</span><span>8,6€</span></div>
-<div class="menu-item"><span>Espresso Martini</span><span>8,3€</span></div>
-<div class="menu-item"><span>Moscow Mule</span><span>8,5€</span></div>
+<div class="grid">
+<div class="card">
+<div class="item"><span>1. Tortilla de patata</span><span class="price">8€</span></div>
+<div class="item"><span>2. Pisto manchego con huevo</span><span class="price">8€</span></div>
+<div class="item"><span>3. Aros de cebolla</span><span class="price">8€</span></div>
+<div class="item"><span>4. Gazpacho andaluz</span><span class="price">8€</span></div>
+<div class="item"><span>5. Champiñones al ajillo</span><span class="price">8€</span></div>
+<div class="item"><span>6. Pimientos de Padrón</span><span class="price">8€</span></div>
+<div class="item"><span>7. Patatas bravas</span><span class="price">8€</span></div>
+<div class="item"><span>8. Papas arrugadas con mojo</span><span class="price">8€</span></div>
+<div class="item"><span>9. Rulo de cabra con cebolla caramelizada</span><span class="price">8€</span></div>
+<div class="item"><span>10. Queso con miel y nueces</span><span class="price">8€</span></div>
+<div class="item"><span>11. Chopitos fritos</span><span class="price">8€</span></div>
+<div class="item"><span>12. Tartar de salmón ahumado</span><span class="price">8€</span></div>
+<div class="item"><span>13. Tataki de atún</span><span class="price">8€</span></div>
+<div class="item"><span>14. Gambas al ajillo</span><span class="price">8€</span></div>
+</div>
+<div class="card">
+<div class="item"><span>15. Gambones a la plancha</span><span class="price">8€</span></div>
+<div class="item"><span>16. Calamares a la romana</span><span class="price">8€</span></div>
+<div class="item"><span>17. Rejos de calamar</span><span class="price">8€</span></div>
+<div class="item"><span>18. Merluza con salsa tártara</span><span class="price">8€</span></div>
+<div class="item"><span>19. Pimiento del piquillo relleno de bacalao</span><span class="price">8€</span></div>
+<div class="item"><span>20. Boquerones en vinagre</span><span class="price">8€</span></div>
+<div class="item"><span>21. Churros de merluza</span><span class="price">8€</span></div>
+<div class="item"><span>22. Tosta de brie con salmón</span><span class="price">8€</span></div>
+<div class="item"><span>23. Ensaladilla rusa</span><span class="price">8€</span></div>
+<div class="item"><span>24. Jamón ibérico</span><span class="price">8€</span></div>
+<div class="item"><span>25. Ensalada César</span><span class="price">8€</span></div>
+<div class="item"><span>26. Solomillo de cerdo</span><span class="price">8€</span></div>
+<div class="item"><span>27. Croquetas de pollo</span><span class="price">8€</span></div>
+</div>
+<div class="card">
+<div class="item"><span>28. Brocheta de pollo</span><span class="price">8€</span></div>
+<div class="item"><span>29. Croquetas de jamón</span><span class="price">8€</span></div>
+<div class="item"><span>30. Chistorra</span><span class="price">8€</span></div>
+<div class="item"><span>31. Morcilla con pimiento asado</span><span class="price">8€</span></div>
+<div class="item"><span>32. Alitas de pollo</span><span class="price">8€</span></div>
+<div class="item"><span>33. Albóndigas</span><span class="price">8€</span></div>
+<div class="item"><span>34. Tosta de pollo con curry</span><span class="price">8€</span></div>
+<div class="item"><span>35. Huevos rotos con jamón y chorizo</span><span class="price">8€</span></div>
+<div class="item"><span>36. Chorizo a la sidra</span><span class="price">8€</span></div>
+<div class="item"><span>37. Quesadilla carne y quesos</span><span class="price">8€</span></div>
+<div class="item"><span>38. Nachos con carne y queso</span><span class="price">8€</span></div>
+<div class="item"><span>39. Mini hamburguesas</span><span class="price">8€</span></div>
+<div class="item"><span>40. Carrillera estofada</span><span class="price">8€</span></div>
+</div>
+</div>
 </section>
   
-<section>
-<h2>🍷 Vinos</h2>
-<div class="menu-item"><span>Vino casa</span><span>4,1€ / 18€</span></div>
-<div class="menu-item"><span>Ramón Bilbao</span><span>19,5€</span></div>
-<div class="menu-item"><span>Emilio Moro</span><span>45€</span></div>
-<div class="menu-item"><span>Moet & Chandon</span><span>79€</span></div>
-</section>
+<section id="postres">
+<h2>🍰 Postres</h2>
+<div class="grid">
+<div class="card">
+<div class="item"><span>Tarta de zanahoria</span><span class="price">7,5€</span></div>
+<div class="item"><span>Brownie con helado de vainilla</span><span class="price">7,5€</span></div>
+<div class="item"><span>Tarta de queso con frutos rojos</span><span class="price">7,5€</span></div>
+<div class="item"><span>Crema catalana</span><span class="price">6,5€</span></div>
+</div>
+<div class="card">
+<div class="item"><span>Tiramisú con chocolate blanco y Baileys</span><span class="price">7,5€</span></div>
+<div class="item"><span>Sorbete de limón con cava</span><span class="price">4,5€</span></div>
+<div class="item"><span>Helado de coco</span><span class="price">5€</span></div>
+</div>
+</div>
+</section>  
 
+<section id="bebidas">
+<h2>🍹 Bebidas & Cócteles</h2>
+<div class="grid">
+
+<div class="card">
+<h3>🍸 Cócteles</h3>
+<div class="item"><span>Mojito</span><span class="price">8,5€</span></div>
+<div class="item"><span>Virgin Mojito</span><span class="price">7,5€</span></div>
+<div class="item"><span>Tiki Neptuno</span><span class="price">8,6€</span></div>
+<div class="item"><span>Piña Colada</span><span class="price">8,3€</span></div>
+<div class="item"><span>Virgin Piña Colada</span><span class="price">7,5€</span></div>
+<div class="item"><span>Espresso Martini</span><span class="price">8,3€</span></div>
+<div class="item"><span>Caipiriña</span><span class="price">8€</span></div>
+<div class="item"><span>Bloody Mary</span><span class="price">8,6€</span></div>
+<div class="item"><span>Moscow Mule</span><span class="price">8,5€</span></div>
+<div class="item"><span>Mint Julep</span><span class="price">8,4€</span></div>
+<div class="item"><span>Daiquiri fresa</span><span class="price">8,6€</span></div>
+</div>
+<div class="card">
+<h3>🥤 Refrescos</h3>
+<div class="item"><span>Coca-Cola / Fanta / 7UP / Schweppes</span><span class="price">3,3€</span></div>
+<div class="item"><span>Agua sin gas</span><span class="price">2,9€</span></div>
+<div class="item"><span>Agua con gas</span><span class="price">2,9€</span></div>
+<div class="item"><span>Limonada casera</span><span class="price">5€</span></div>
+<div class="item"><span>Zumos</span><span class="price">3,3€</span></div>
+</div>
+
+<div class="card">
+<h3>🍺 Cervezas</h3>
+<div class="item"><span>Cerveza grifo</span><span class="price">3,2€</span></div>
+<div class="item"><span>Sin alcohol</span><span class="price">3,2€</span></div>
+<div class="item"><span>Corona</span><span class="price">3,9€</span></div>
+<div class="item"><span>Estrella Galicia 1906</span><span class="price">3,9€</span></div>
+<div class="item"><span>Koppaberg</span><span class="price">4,9€</span></div>
+</div>
+<div class="card">
+<h3>☕ Cafés</h3>
+<div class="item"><span>Espresso</span><span class="price">2,2€</span></div>
+<div class="item"><span>Espresso doble</span><span class="price">2,9€</span></div>
+<div class="item"><span>Americano</span><span class="price">2,2€</span></div>
+<div class="item"><span>Cortado</span><span class="price">2,2€</span></div>
+<div class="item"><span>Café con leche</span><span class="price">2,2€</span></div>
+<div class="item"><span>Capuchino</span><span class="price">2,9€</span></div>
+<div class="item"><span>Barraquito</span><span class="price">4,9€</span></div>
+<div class="item"><span>Café irlandés</span><span class="price">6,9€</span></div>
+<div class="item"><span>Carajillo</span><span class="price">4€</span></div>
+<div class="item"><span>Infusiones</span><span class="price">2,2€</span></div>
+</div>
+
+<div class="card">
+<h3>🥃 Licores & Destilados</h3>
+<div class="item"><span>Martini (Bianco/Rosso)</span><span class="price">6,5€</span></div>
+<div class="item"><span>Campari</span><span class="price">6€</span></div>
+<div class="item"><span>Bacardi / Smirnoff / Absolut</span><span class="price">8,5€</span></div>
+<div class="item"><span>Whisky (Ballantines / J&B)</span><span class="price">8,5€</span></div>
+<div class="item"><span>Jack Daniels</span><span class="price">10€</span></div>
+<div class="item"><span>Ginebra (Gordon's / Beefeater)</span><span class="price">8,5€</span></div>
+<div class="item"><span>Bombay Sapphire</span><span class="price">10€</span></div>
+<div class="item"><span>Ron miel</span><span class="price">5,5€</span></div>
+<div class="item"><span>Baileys</span><span class="price">7€</span></div>
+<div class="item"><span>Tequila</span><span class="price">6€</span></div>
+</div>
+</div>
+</section>
+<section id="vinos">
+<h2>🍷 Vinos</h2>
+<div class="grid">
+
+<div class="card">
+<h3>🍷 Tintos</h3>
+<div class="item"><span>Casa (Galicia)</span><span class="price">4,1€ / 18€</span></div>
+<div class="item"><span>El Ancón (Islas Canarias)</span><span class="price">20€</span></div>
+<div class="item"><span>Chiquita Locura</span><span class="price">20,5€</span></div>
+<div class="item"><span>Atlanticum</span><span class="price">72€</span></div>
+<div class="item"><span>Casa Vella (Penedés)</span><span class="price">35€</span></div>
+<div class="item"><span>Jean Leon</span><span class="price">24€</span></div>
+<div class="item"><span>Cepa Divisa (Rioja)</span><span class="price">18€</span></div>
+<div class="item"><span>La Vanidosa</span><span class="price">35€</span></div>
+<div class="item"><span>Celeste Roble</span><span class="price">19,5€</span></div>
+<div class="item"><span>Ramón Bilbao Crianza</span><span class="price">19,5€</span></div>
+<div class="item"><span>Azpilicueta Crianza</span><span class="price">19,5€</span></div>
+<div class="item"><span>Emilio Moro</span><span class="price">45€</span></div>
+<div class="item"><span>Finca Resalso</span><span class="price">22€</span></div>
+<div class="item"><span>Hito</span><span class="price">31€</span></div>
+<div class="item"><span>Roda</span><span class="price">62€</span></div>
+</div>
+<div class="card">
+<h3>🥂 Blancos</h3>
+<div class="item"><span>Casa (Galicia)</span><span class="price">4,1€ / 18€</span></div>
+<div class="item"><span>Godeval (Valdeorras)</span><span class="price">26€</span></div>
+<div class="item"><span>Celeste (Rueda)</span><span class="price">19,5€</span></div>
+<div class="item"><span>La Caprichosa</span><span class="price">25€</span></div>
+<div class="item"><span>Palacio de Bornos</span><span class="price">20€</span></div>
+<div class="item"><span>Jean Leon Chardonnay</span><span class="price">25€</span></div>
+<div class="item"><span>Paco & Lola</span><span class="price">28€</span></div>
+<div class="item"><span>Terras Gaudas</span><span class="price">26€</span></div>
+<div class="item"><span>Corazón Negro</span><span class="price">22€</span></div>
+<div class="item"><span>Flor de Chasna</span><span class="price">22€</span></div>
+</div>
+
+<div class="card">
+<h3>🌸 Rosados</h3>
+<div class="item"><span>Casa</span><span class="price">4,1€ / 18€</span></div>
+<div class="item"><span>Otazu</span><span class="price">21€</span></div>
+<div class="item"><span>Flor de Chasna</span><span class="price">21€</span></div>
+<div class="item"><span>Rosame</span><span class="price">19,5€</span></div>
+<div class="item"><span>Studio by Miraval</span><span class="price">31€</span></div>
+</div>
+
+<div class="card">
+<h3>🍾 Espumosos</h3>
+<div class="item"><span>Cava Visiega Brut</span><span class="price">4,5€ / 19€</span></div>
+<div class="item"><span>Torelló Brut Reserva</span><span class="price">24€</span></div>
+<div class="item"><span>Juvé & Camps Rosado</span><span class="price">28€</span></div>
+<div class="item"><span>Prosecco Cinzano</span><span class="price">28€</span></div>
+<div class="item"><span>Moët & Chandon Brut</span><span class="price">79€</span></div>
+</div>
+
+</div>
+</section>
 
 <!-- RESEÑAS -->
 <section style="background:#f9f9f9;">
