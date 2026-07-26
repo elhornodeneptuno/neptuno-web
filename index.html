@@ -387,13 +387,12 @@ const callBtn = document.getElementById("callBtn");
 
 function updateCallBtn(){
   if(isOpen()){
+    callBtn.style.display = "inline-block";
     callBtn.style.background = "#25D366";
     callBtn.innerText = "🟢 Abierto - Llamar";
     callBtn.href = "tel:+34682106678";
   } else {
-    callBtn.style.background = "#ff3b30";
-    callBtn.innerText = "🔴 Cerrado - WhatsApp";
-    callBtn.href = "https://wa.me/34672792801?text=Hola%20quiero%20reservar%20mesa";
+    callBtn.style.display = "none";
   }
 }
 updateCallBtn();
